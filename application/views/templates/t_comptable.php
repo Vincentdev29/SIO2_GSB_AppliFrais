@@ -35,7 +35,7 @@
 
 				<ul id="menuList">
 					<li>
-						Visiteur :<br/>
+						Comptable :<br/>
 						<?php echo $this->session->userdata('prenom')."  ".$this->session->userdata('nom');  ?>
 					</li>
 
