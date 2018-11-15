@@ -75,6 +75,24 @@ class FunctionsLib extends CI_Model {
 		return $lesMois;
 	}
 
+  function getDernierMois()
+	{
+		$lesMois = array();
+
+		$date = new datetime ("now");
+		$interval = new DateInterval('P1M');
+
+		for($i=1; $i<=2; $i++) {
+			@list($jour,$mois,$annee) = explode('/',$date->format("d/m/Y"));
+			if(strlen($mois) == 1){
+				$mois = "0".$mois;
+			}
+			$lesMois[] = $annee.$mois;
+			$date->sub($interval);
+		}
+		return $lesMois;
+	}
+
 	/**
 	 * Indique si une valeur est un entier positif ou nul
 
