@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class A_visiteur extends CI_Model {
+class A_comptable extends CI_Model {
 
     function __construct()
     {
@@ -38,7 +38,7 @@ class A_visiteur extends CI_Model {
   /**
 	 * Présente le détail de la fiche sélectionnée
 	 *
-	 * @param $idVisiteur : l'id du visiteur 
+	 * @param $idVisiteur : l'id du visiteur
 	 * @param $mois : le mois de la fiche à modifier
 	*/
 	public function voirFiche($idVisiteur, $mois)

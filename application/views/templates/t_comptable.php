@@ -44,10 +44,6 @@
 					</li>
 
 					<li class="smenu">
-						<?php echo anchor('c_comptable/ficheAValider', 'Fiche à valider', 'title="Consultation de mes fiches de frais"'); ?>
-					</li>
-
-					<li class="smenu">
 						<?php echo anchor('c_comptable/deconnecter', 'Se déconnecter', 'title="Déconnexion"'); ?>
 					</li>
 				</ul>
