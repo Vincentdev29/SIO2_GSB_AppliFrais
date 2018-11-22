@@ -70,7 +70,17 @@ class Authentif extends CI_Model {
 		return $authUser;
 	}*/
 
-  public function authentifier ($login, $mdp)
+  public function authentifierVisiteur ($login, $mdp)
+	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
+
+		$this->load->model('dataAccess');
+
+    $authUser = $this->dataAccess->getInfosVisiteur($login, $mdp);
+
+		return $authUser;
+	}
+
+  public function authentifierComptable ($login, $mdp)
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
 
 		$this->load->model('dataAccess');
