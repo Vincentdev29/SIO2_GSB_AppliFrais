@@ -24,7 +24,7 @@
 		<div id="page">
 			<div id="entete">
 				<img src="<?php echo $v_path.'/templates/images/logo.jpg'?>" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" />
-				<h1>Gestion des frais de déplacements</h1>
+				<h1>Gestion des frais par le service Comptable</h1>
 			</div>
 
 			<!-- Division pour le menu -->

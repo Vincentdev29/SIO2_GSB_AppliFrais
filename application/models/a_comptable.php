@@ -32,7 +32,7 @@ class A_comptable extends CI_Model {
 		// contrôle de l'existence des 6 dernières fiches et création si nécessaire
 
 		// envoie de la vue accueil du visiteur
-		$this->templates->load('t_comptable', 'v_visAccueil');
+		$this->templates->load('t_comptable', 'v_compAccueil');
 	}
 
   /**

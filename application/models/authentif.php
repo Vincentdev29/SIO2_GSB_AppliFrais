@@ -25,7 +25,8 @@ class Authentif extends CI_Model {
 	 * @param $nom
 	 * @param $prenom
 	 */
-	public function connecter($idUser,$nom,$prenom)
+
+  public function connecter($idUser,$nom,$prenom)
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
 
 		$authUser = array(
