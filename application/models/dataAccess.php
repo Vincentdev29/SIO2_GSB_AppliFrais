@@ -309,6 +309,16 @@ class DataAccess extends CI_Model {
 		return $lesFiches;
 	}
 
+  public function getFichesDernierMois () {
+		$req = "select mois, montantValide, dateModif, idVisiteur
+				from  fichefrais
+				where mois = 201811
+				order by idVisiteur";
+		$rs = $this->db->query($req);
+		$lesFiches = $rs->result_array();
+		return $lesFiches;
+	}
+
 	/**
 	 * Calcule le montant total de la fiche pour un visiteur et un mois donnés
 	 *
