@@ -10,13 +10,14 @@
 	<head>
 		<title>Intranet du Laboratoire Galaxy-Swiss Bourdin</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<link href="<?php echo $v_path.'/templates/css/styles.css'?>" rel="stylesheet" type="text/css" />
+		<link href="<?php echo css_url('styles.css')?>" rel="stylesheet" type="text/css" />
+
 	</head>
 
 	<body>
 		<div id="page">
 			<div id="entete">
-				<img src="<?php echo $v_path.'/templates/images/logo.jpg'?>" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" />
+				<img src="<?php echo img_url('logo.jpg')?>" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" />
 				<h1>Suivi du remboursement des frais</h1>
 			</div>
 
@@ -26,9 +27,7 @@
 				<br/>
 			</div>
 
-		</div>    
+		</div>
 
 	</body>
 </html>
-
-	  
