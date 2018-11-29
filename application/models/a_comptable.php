@@ -35,6 +35,8 @@ class A_comptable extends CI_Model {
 		$this->templates->load('t_comptable', 'v_compAccueil');
 	}
 
+  
+
   /**
 	 * Présente le détail de la fiche sélectionnée
 	 *
@@ -50,65 +52,5 @@ class A_comptable extends CI_Model {
 		$data['lesFraisForfait'] = $this->dataAccess->getLesLignesForfait($idVisiteur,$mois);
 
 		$this->templates->load('t_visiteur', 'v_visVoirListeFrais', $data);
-	}
-
-	/**
-	 * Signe une fiche de frais en changeant son état
-	 *
-	 * @param $idVisiteur : l'id du comptable
-	 * @param $mois : Vois toutes les fiches à valider ce mois ci
-   *
-	*/
-	public function signeFiche($idVisiteur, $mois)
-	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
-		// TODO : intégrer une fonctionnalité d'impression PDF de la fiche
-
-	    $this->dataAccess->signeFiche($idVisiteur, $mois);
-	}
-
-	/**
-	 * Modifie les quantités associées aux frais forfaitisés dans une fiche donnée
-	 *
-	 * @param $idVisiteur : l'id du visiteur
-	 * @param $mois : le mois de la fiche concernée
-	 * @param $lesFrais : les quantités liées à chaque type de frais, sous la forme d'un tableau
-	*/
-	public function majForfait($idVisiteur, $mois, $lesFrais)
-	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
-		// TODO : valider les données contenues dans $lesFrais ...
-
-		$this->dataAccess->majLignesForfait($idVisiteur,$mois,$lesFrais);
-		$this->dataAccess->recalculeMontantFiche($idVisiteur,$mois);
-	}
-
-	/**
-	 * Ajoute une ligne de frais hors forfait dans une fiche donnée
-	 *
-	 * @param $idVisiteur : l'id du visiteur
-	 * @param $mois : le mois de la fiche concernée
-	 * @param $lesFrais : les quantités liées à chaque type de frais, sous la forme d'un tableau
-	*/
-	public function ajouteFrais($idVisiteur, $mois, $uneLigne)
-	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
-		// TODO : valider la donnée contenues dans $uneLigne ...
-
-		$dateFrais = $uneLigne['dateFrais'];
-		$libelle = $uneLigne['libelle'];
-		$montant = $uneLigne['montant'];
-
-		$this->dataAccess->creeLigneHorsForfait($idVisiteur,$mois,$libelle,$dateFrais,$montant);
-	}
-
-	/**
-	 * Supprime une ligne de frais hors forfait dans une fiche donnée
-	 *
-	 * @param $idVisiteur : l'id du visiteur
-	 * @param $mois : le mois de la fiche concernée
-	 * @param $idLigneFrais : l'id de la ligne à supprimer
-	*/
-	public function supprLigneFrais($idVisiteur, $mois, $idLigneFrais)
-	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session et cohérents entre eux
-
-	    $this->dataAccess->supprimerLigneHorsForfait($idLigneFrais);
 	}
 }

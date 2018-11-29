@@ -25,7 +25,6 @@ class DataAccess extends CI_Model {
 				where visiteur.login=? and visiteur.mdp=?";
 		$rs = $this->db->query($req, array ($login, $mdp));
 		$ligne = $rs->first_row('array');
-<<<<<<< HEAD
 		return $ligne;
 	}
 
@@ -35,8 +34,6 @@ class DataAccess extends CI_Model {
 				where comptable.login=? and comptable.mdp=?";
 		$rs = $this->db->query($req, array ($login, $mdp));
 		$ligne = $rs->first_row('array');
-=======
->>>>>>> f3ce0d792946f846024252a7106f6e452d2d4190
 		return $ligne;
 	}
 
@@ -312,10 +309,8 @@ class DataAccess extends CI_Model {
 		return $lesFiches;
 	}
 
-<<<<<<< HEAD
-=======
   public function getFichesSigner () {
-		$req = "select v.id, 1 
+		$req = "select v.id, 1
 				from  fichefrais f, etat e, visiteur v
 				where f.idVisiteur = v.id AND f.idEtat = e.id
 				order by mois";
@@ -324,7 +319,6 @@ class DataAccess extends CI_Model {
 		return $lesFiches;
 	}
 
->>>>>>> f3ce0d792946f846024252a7106f6e452d2d4190
 	/**
 	 * Calcule le montant total de la fiche pour un visiteur et un mois donnés
 	 *
