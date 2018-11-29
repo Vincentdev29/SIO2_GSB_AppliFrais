@@ -60,22 +60,12 @@ class Authentif extends CI_Model {
 	 *
 	 * @return : renvoie l'id, le nom et le prenom de l'utilisateur dans un tableau s'il est reconnu, sinon un tableau vide.
 	 */
-	/*public function authentifier ($login, $mdp)
+	public function authentifier ($login, $mdp)
 	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
 
 		$this->load->model('dataAccess');
 
 		$authUser = $this->dataAccess->getInfosVisiteur($login, $mdp);
-
-		return $authUser;
-	}*/
-
-  public function authentifier ($login, $mdp)
-	{	// TODO : s'assurer que les paramètres reçus sont cohérents avec ceux mémorisés en session
-
-		$this->load->model('dataAccess');
-
-    $authUser = $this->dataAccess->getInfosComptable($login, $mdp);
 
 		return $authUser;
 	}

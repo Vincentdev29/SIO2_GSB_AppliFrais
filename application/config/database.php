@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'ts1';
-$db['default']['password'] = 'ts1';
-$db['default']['database'] = 'sio2_applifrais';
+$db['default']['username'] = 'ts2';
+$db['default']['password'] = 'ts2';
+$db['default']['database'] = 'cabillic_vincent_gsb-frais';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
