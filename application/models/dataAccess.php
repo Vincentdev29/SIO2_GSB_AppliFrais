@@ -205,6 +205,16 @@ class DataAccess extends CI_Model {
 		}
 	}
 
+  public function validerFiche()
+  { // Passe la fiche en attente de validation
+    $laFiche = $this->getLesInfosFicheFrais($idVisiteur,$mois);
+		if($laFiche['idEtat']=='CL')
+    {
+      if ()
+				$this->majEtatFicheFrais($idVisiteur, $mois,'CL');
+		}
+  }
+
 	/**
 	 * Crée un nouveau frais hors forfait pour un visiteur un mois donné
 	 * à partir des informations fournies en paramètre
@@ -309,11 +319,21 @@ class DataAccess extends CI_Model {
 		return $lesFiches;
 	}
 
-  public function getFichesSigner () {
-		$req = "select v.id, 1
-				from  fichefrais f, etat e, visiteur v
-				where f.idVisiteur = v.id AND f.idEtat = e.id
-				order by mois";
+  public function getFichesComptable () {
+		$req = "select idVisiteur, mois, montantValide, dateModif, id, libelle
+				from  fichefrais inner join Etat on ficheFrais.idEtat = Etat.id
+				where Etat.id = CL
+				order by mois desc";
+		$rs = $this->db->query($req);
+		$lesFiches = $rs->result_array();
+		return $lesFiches;
+	}
+
+  public function getFichesDernierMois () {
+		$req = "select mois, montantValide, dateModif, idVisiteur
+				from  fichefrais
+				where mois = 201811
+				order by idVisiteur";
 		$rs = $this->db->query($req);
 		$lesFiches = $rs->result_array();
 		return $lesFiches;
