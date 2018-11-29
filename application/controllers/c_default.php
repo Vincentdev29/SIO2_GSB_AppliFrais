@@ -51,20 +51,13 @@ class C_default extends CI_Controller {
 			$data = array('erreur'=>'Login ou mot de passe incorrect');
 			$this->templates->load('t_connexion', 'v_connexion', $data);
 		}
-		else
-		{
-			$this->authentif->connecter($authVisiteur['id'], $authVisiteur['nom'], $authVisiteur['prenom']);
-			$this->index();
-		}
-
-		if(empty($authComptable))
+		else if (empty($authComptable))
 		{
 			$data = array('erreur'=>'Login ou mot de passe incorrect');
 			$this->templates->load('t_connexion', 'v_connexion', $data);
 		}
 		else
 		{
-			$this->authentif->connecter($authComptable['id'], $authComptable['nom'], $authComptable['prenom']);
 			$this->index();
 		}
 	}
